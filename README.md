@@ -18,7 +18,7 @@ Change the name of the crate: Chose a good name for your project, and change the
     * Change the `package.name` from `eframe_template` to `your_crate`.
     * Change the `package.authors`
 * `main.rs`
-    * Change `eframe_template::TemplateApp` to `your_crate::TemplateApp`
+    * Change `eframe_template::SchedulerApp` to `your_crate::SchedulerApp`
 * `index.html`
     * Change the `<title>eframe template</title>` to `<title>your_crate</title>`. optional.
 * `assets/sw.js`
