@@ -39,7 +39,7 @@ impl Default for SchedulerApp {
         let mut rng = rand::thread_rng();
         for _ in 0..15 {
             let job_duration = rng.gen_range(1..=360);
-            let io_prob = rng.gen_range(0.0..=0.5);
+            let io_prob = rng.gen_range(0.0..=0.1);
             scheduler_wrapper_locked
                 .scheduler
                 .register_process(job_duration, io_prob);
@@ -225,7 +225,7 @@ impl eframe::App for SchedulerApp {
             ui.colored_label(color, format!("{:?}", io_device.state));
 
             let progres_bar =
-                egui::ProgressBar::new(io_device.remaining_progress as f32 / 5.0);
+                egui::ProgressBar::new(io_device.remaining_progress as f32 / 10.0);
 
             ui.add(progres_bar);
 

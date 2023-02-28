@@ -183,7 +183,7 @@ impl Scheduler for FirstComeFirstServeScheduler {
             // move the process to the IOBlocked state.
             for (i, process) in &mut self.processes.iter_mut().enumerate() {
                 if process.state == ProcessState::IORequest {
-                    self.io_device.start(5);
+                    self.io_device.start(10);
                     process.state = ProcessState::IOBlocked;
                     return SchedulerTickOutcome::IORequestHandled(i);
                 }
